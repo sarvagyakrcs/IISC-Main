@@ -79,6 +79,7 @@ const ExtUserJumboTron = () => {
 	);
 
 	const loadingScreen = (
+		
 		<div className="loading-screen">
 			<div className="jumbotron">
 				<div className="jumbotron-title">
