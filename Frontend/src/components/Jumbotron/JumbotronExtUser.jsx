@@ -7,23 +7,29 @@ const ExtUserJumboTron = () => {
 	const user = JSON.parse(localStorage.getItem('userDetails') || '{}');
 
 	const [viewProof, setViewProof] = useState(false);
-	const [isLoading, setIsLoading] = useState(true);
+	const [isLoading, setIsLoading] = useState(false);
+
+	// useEffect(() => {
+	// 	const fetchData = async () => {
+	// 		try {
+	// 			// Simulating API call with setTimeout
+	// 			// Replace this with your actual API call
+	// 			await new Promise((resolve) => setTimeout(resolve, 2000));
+	// 			setIsLoading(false);
+	// 		} catch (error) {
+	// 			console.error('Error fetching user data:', error);
+	// 			setIsLoading(false);
+	// 		}
+	// 	};
+
+	// 	fetchData();
+	// }, []);
 
 	useEffect(() => {
-		const fetchData = async () => {
-			try {
-				// Simulating API call with setTimeout
-				// Replace this with your actual API call
-				await new Promise((resolve) => setTimeout(resolve, 2000));
-				setIsLoading(false);
-			} catch (error) {
-				console.error('Error fetching user data:', error);
-				setIsLoading(false);
-			}
-		};
-
-		fetchData();
-	}, []);
+        if (user.fname === undefined || user.fname === null || user.fname === '') {
+            window.location.reload();
+        }
+    }, [user.facname]);
 
 	const statusMapping = {
 		A: 'Active',

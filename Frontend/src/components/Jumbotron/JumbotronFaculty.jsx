@@ -13,6 +13,13 @@ const JumbotronFaculty = () => {
         Name: useRef(user.facname),
     };
 
+    useEffect(() => {
+        if (user.facname === undefined || user.facname === null || user.facname === '') {
+            window.location.reload();
+        }
+    }, [user.facname]);
+
+
     const JumbotronContent = (
         <div className="jumbotron">
             <div className="jumbotron-title">

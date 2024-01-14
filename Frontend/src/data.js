@@ -64,16 +64,40 @@ const getMenuOptions = (accountType) => {
             },
         }
     }
-    else{
+    else if(accountType === 'Faculty') {
+        return {
+            staff: {
+                icon: staffIcon,
+                menuOption: 'Staff'
+            },
+            resources: {
+                icon: resourcesIcon,
+                menuOption: 'Resources'
+            },
+            validate: {
+                icon: validateIcon,
+                menuOption: 'Validate'
+            }
+        }
+    }
+    else if(accountType === 'Student') {
         return {
             student: {
                 icon: studentIcon,
                 menuOption: 'Students'
             },
-            staff: {
-                icon: staffIcon,
-                menuOption: 'Staff'
+            resources: {
+                icon: resourcesIcon,
+                menuOption: 'Resources'
             },
+            validate: {
+                icon: validateIcon,
+                menuOption: 'Validate'
+            }
+        }
+    }
+    else{
+        return {
             resources: {
                 icon: resourcesIcon,
                 menuOption: 'Resources'
