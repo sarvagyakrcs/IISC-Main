@@ -1,0 +1,17 @@
+# Vite.js
+node_modules/
+dist/
+.idea/
+
+# macOS
+.DS_Store
+
+# Visual Studio Code
+.vscode/
+
+# Yarn
+.yarn/
+
+# npm
+npm-debug.log
+yarn-error.log

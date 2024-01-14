@@ -1,0 +1,54 @@
+# Django
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+db.sqlite3
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyc
+*.pyo
+*.pyd
+*.pyo
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual Environment
+venv/
+env/
+
+# VS Code
+.vscode/
+
+# Development
+*.sqlite3
+*.db
+*.log
+
+# Local development settings
+local_settings.py
+
+# Compiled Python files
+*.pyc
+
+# Python bytecode
+__pycache__/
+
+# Django secret key
+*.secret_key
+
+# macOS
+.DS_Store
+
+# PyCharm
+.idea/
+*.iml
+
+# Visual Studio Code
+.vscode/
+
+# Python virtual environment
+venv/
