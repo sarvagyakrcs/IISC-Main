@@ -1,8 +1,28 @@
-# from django.contrib import admin
-# from .models import Clstrgrp, ClstrgrpBackup, Counter, DeptGroup, ExtResources, ExtStats, ExtUsers, ExtUsersBackup, Faculty, HipQueue, HpQueue, NewExtUsers, NisUserData, no_due_reg, NoDue, Profgrp, Resource, Stats, Student, StudentBackup, StudentNoLogin, User, extClstrgrp, Student_290115
-#
-# # Register your models here.
-#
-# @admin.register(Clstrgrp, ClstrgrpBackup, Counter, DeptGroup, ExtResources, ExtStats, ExtUsers, ExtUsersBackup, Faculty, HipQueue, HpQueue, NewExtUsers, NisUserData, no_due_reg, NoDue, Profgrp, Resource, Stats, Student, StudentBackup, StudentNoLogin, User, extClstrgrp, Student_290115)
-# class MyModelAdmin(admin.ModelAdmin):
-#     pass
+from django.contrib import admin
+from .models import Clstrgrp, ClstrgrpBackup, Counter, DeptGroup, ExtResources, extClstrgrp, ExtStats, ExtUsers, ExtUsersBackup, Faculty, HipQueue, HpQueue, NewExtUsers, NisUserData, no_due_reg, NoDue, Profgrp, Resources, Stats, Student, Student_290115, StudentBackup, StudentNoLogin, User
+
+# Register your models here
+admin.site.register(Clstrgrp)
+admin.site.register(ClstrgrpBackup)
+admin.site.register(Counter)
+admin.site.register(DeptGroup)
+admin.site.register(ExtResources)
+admin.site.register(extClstrgrp)
+admin.site.register(ExtStats)
+admin.site.register(ExtUsers)
+admin.site.register(ExtUsersBackup)
+admin.site.register(Faculty)
+admin.site.register(HipQueue)
+admin.site.register(HpQueue)
+admin.site.register(NewExtUsers)
+admin.site.register(NisUserData)
+admin.site.register(no_due_reg)
+admin.site.register(NoDue)
+admin.site.register(Profgrp)
+admin.site.register(Resources)
+admin.site.register(Stats)
+admin.site.register(Student)
+admin.site.register(Student_290115)
+admin.site.register(StudentBackup)
+admin.site.register(StudentNoLogin)
+admin.site.register(User)

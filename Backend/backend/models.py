@@ -1,98 +1,7 @@
-# This is an auto-generated Django model module.
-# You'll have to do the following manually to clean this up:
-#   * Rearrange models' order
-#   * Make sure each model has one field with primary_key=True
-#   * Make sure each ForeignKey and OneToOneField has `on_delete` set to the desired behavior
-#   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
-# Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
 
-
-from django.contrib.auth.models import AbstractUser, BaseUserManager
-
-class CustomUserManager(BaseUserManager):
-    def create_superuser(self, username, email, password=None, **extra_fields):
-        extra_fields.setdefault('is_staff', True)
-        extra_fields.setdefault('is_superuser', True)
-
-        # Set a default value for last_login to avoid database error
-        extra_fields.setdefault('last_login', self.model.objects.get(username=username).date_joined)
-
-        return self.create_user(username, email, password, **extra_fields)
-
-class CustomUser(AbstractUser):
-    # Your custom fields and methods go here
-
-    objects = CustomUserManager()
-
-class AuthGroup(models.Model):
-    name = models.CharField(unique=True, max_length=80)
-
-    class Meta:
-        managed = False
-        db_table = 'auth_group'
-
-
-class AuthGroupPermissions(models.Model):
-    id = models.BigAutoField(primary_key=True)
-    group_id = models.IntegerField()
-    permission_id = models.IntegerField()
-
-    class Meta:
-        managed = False
-        db_table = 'auth_group_permissions'
-
-
-class AuthPermission(models.Model):
-    name = models.CharField(max_length=50)
-    content_type_id = models.IntegerField()
-    codename = models.CharField(max_length=100)
-
-    class Meta:
-        managed = False
-        db_table = 'auth_permission'
-        unique_together = (('content_type_id', 'codename'),)
-
-
-class AuthUser(models.Model):
-    password = models.CharField(max_length=128)
-    last_login = models.DateTimeField()
-    is_superuser = models.IntegerField()
-    username = models.CharField(unique=True, max_length=30)
-    first_name = models.CharField(max_length=30)
-    last_name = models.CharField(max_length=30)
-    email = models.CharField(max_length=75)
-    is_staff = models.IntegerField()
-    is_active = models.IntegerField()
-    date_joined = models.DateTimeField()
-
-    class Meta:
-        managed = False
-        db_table = 'auth_user'
-
-
-class AuthUserGroups(models.Model):
-    id = models.BigAutoField(primary_key=True)
-    user_id = models.IntegerField()
-    group_id = models.IntegerField()
-
-    class Meta:
-        managed = False
-        db_table = 'auth_user_groups'
-
-
-class AuthUserUserPermissions(models.Model):
-    id = models.BigAutoField(primary_key=True)
-    user_id = models.IntegerField()
-    permission_id = models.IntegerField()
-
-    class Meta:
-        managed = False
-        db_table = 'auth_user_user_permissions'
-
-
 class Clstrgrp(models.Model):
-    name = models.CharField(max_length=20, blank=True, null=True)
+    name = models.CharField(max_length=20, blank=False, null=False, primary_key=True)
     count = models.IntegerField(blank=True, null=True)
     curnt = models.CharField(max_length=20, blank=True, null=True)
 
@@ -102,7 +11,7 @@ class Clstrgrp(models.Model):
 
 
 class ClstrgrpBackup(models.Model):
-    name = models.CharField(max_length=20, blank=True, null=True)
+    name = models.CharField(max_length=20, blank=False, null=False, primary_key=True)
     count = models.IntegerField(blank=True, null=True)
     curnt = models.CharField(max_length=20, blank=True, null=True)
 
@@ -112,7 +21,7 @@ class ClstrgrpBackup(models.Model):
 
 
 class Counter(models.Model):
-    nrid = models.IntegerField(blank=True, null=True)
+    nrid = models.IntegerField(blank=False, null=False, primary_key=True)
     ugid = models.IntegerField(blank=True, null=True)
 
     class Meta:
@@ -123,37 +32,15 @@ class Counter(models.Model):
 class DeptGroup(models.Model):
     dept = models.CharField(max_length=7, blank=True, null=True)
     grpname = models.CharField(max_length=10, blank=True, null=True)
-    grpid = models.IntegerField(blank=True, null=True)
+    grpid = models.IntegerField(blank=False, null=False, primary_key=True)
 
     class Meta:
         managed = False
         db_table = 'deptgroup'
 
 
-class DjangoContentType(models.Model):
-    name = models.CharField(max_length=100)
-    app_label = models.CharField(max_length=100)
-    model = models.CharField(max_length=100)
-
-    class Meta:
-        managed = False
-        db_table = 'django_content_type'
-        unique_together = (('app_label', 'model'),)
-
-
-class DjangoMigrations(models.Model):
-    id = models.BigAutoField(primary_key=True)
-    app = models.CharField(max_length=255)
-    name = models.CharField(max_length=255)
-    applied = models.DateTimeField()
-
-    class Meta:
-        managed = False
-        db_table = 'django_migrations'
-
-
 class ExtResources(models.Model):
-    fid = models.CharField(max_length=15, blank=True, null=True)
+    fid = models.CharField(max_length=15, blank=False, null=False, primary_key=True)
     request = models.CharField(max_length=25, blank=True, null=True)
     approved = models.CharField(max_length=25, blank=True, null=True)
     granted = models.CharField(max_length=25, blank=True, null=True)
@@ -165,7 +52,7 @@ class ExtResources(models.Model):
 
 
 class extClstrgrp(models.Model):
-    name = models.CharField(max_length=20, blank=True, null=True)
+    name = models.CharField(max_length=20, blank=False, null=False, primary_key=True)
     count = models.IntegerField(blank=True, null=True)
     curnt = models.CharField(max_length=20, blank=True, null=True)
 
@@ -183,7 +70,7 @@ class ExtStats(models.Model):
     rsvltd = models.IntegerField(blank=True, null=True)
     rsactvd = models.IntegerField(blank=True, null=True)
     rsdltd = models.IntegerField(blank=True, null=True)
-    monthyear = models.CharField(max_length=7, blank=True, null=True)
+    monthyear = models.CharField(max_length=7, blank=False, null=False, primary_key=True)
 
     class Meta:
         managed = False
@@ -205,7 +92,7 @@ class ExtUsers(models.Model):
     dexp = models.DateField()
     rest = models.CharField(max_length=50)
     proof = models.CharField(max_length=200)
-    fid = models.CharField(primary_key=True, max_length=15)
+    fid = models.CharField(blank=False, null=False, primary_key=True, max_length=15)
     ext_lock_date = models.TextField()
     remarks = models.TextField()
 
@@ -218,7 +105,7 @@ class ExtUsersBackup(models.Model):
     status = models.CharField(max_length=1, blank=True, null=True)
     uid = models.CharField(max_length=35, blank=True, null=True)
     fname = models.CharField(max_length=20)
-    regno = models.CharField(primary_key=True, max_length=15)
+    regno = models.CharField(blank=False, null=False, primary_key=True, max_length=15)
     iname = models.CharField(max_length=100)
     doe = models.DateField()
     email = models.CharField(max_length=50)
@@ -235,7 +122,7 @@ class ExtUsersBackup(models.Model):
 
 
 class Faculty(models.Model):
-    empid = models.IntegerField(primary_key=True)
+    empid = models.IntegerField(blank=False, null=False, primary_key=True)
     facname = models.CharField(max_length=255)
     facdept = models.CharField(max_length=255)
     facdesg = models.CharField(max_length=255)
@@ -253,7 +140,7 @@ class HipQueue(models.Model):
     cray_hp_s = models.CharField(max_length=10, blank=True, null=True)
     dgx_hp_l = models.CharField(max_length=10, blank=True, null=True)
     dgx_hp_s = models.CharField(max_length=10, blank=True, null=True)
-    fid = models.CharField(primary_key=True, max_length=15)
+    fid = models.CharField(blank=False, null=False, primary_key=True, max_length=15)
 
     class Meta:
         managed = False
@@ -264,7 +151,7 @@ class HpQueue(models.Model):
     hp_status = models.IntegerField()
     hp_l = models.CharField(max_length=10, blank=True, null=True)
     hp_s = models.CharField(max_length=10, blank=True, null=True)
-    fid = models.CharField(max_length=15, blank=True, null=True)
+    fid = models.CharField(max_length=15, blank=False, null=False, primary_key=True)
 
     class Meta:
         managed = False
@@ -275,7 +162,7 @@ class NewExtUsers(models.Model):
     status = models.CharField(max_length=1, blank=True, null=True)
     uid = models.CharField(max_length=35, blank=True, null=True)
     fname = models.CharField(max_length=20)
-    regno = models.CharField(primary_key=True, max_length=15)
+    regno = models.CharField(blank=False, null=False, primary_key=True, max_length=15)
     iname = models.CharField(max_length=100)
     doe = models.DateField()
     email = models.CharField(max_length=50)
@@ -305,7 +192,7 @@ class NisUserData(models.Model):
     facname = models.CharField(max_length=75, blank=True, null=True)
     phno = models.CharField(max_length=20, blank=True, null=True)
     email = models.CharField(max_length=75, blank=True, null=True)
-    fid = models.CharField(max_length=15, blank=True, null=True)
+    fid = models.CharField(max_length=15, blank=False, null=False, primary_key=True)
 
     class Meta:
         managed = False
@@ -314,7 +201,7 @@ class NisUserData(models.Model):
 
 class no_due_reg(models.Model):
     name = models.CharField(max_length=255)
-    srno = models.CharField(max_length=255)
+    srno = models.CharField(max_length=255, blank=False, null=False, primary_key=True)
     dept = models.CharField(max_length=255)
     guidename = models.CharField(max_length=255)
     comp_uid = models.CharField(max_length=255)
@@ -331,7 +218,7 @@ class no_due_reg(models.Model):
 
 
 class NoDue(models.Model):
-    due_id = models.BigAutoField(primary_key=True)
+    due_id = models.BigAutoField(blank=False, null=False, primary_key=True)
     fid = models.CharField(max_length=255)
     name = models.CharField(max_length=255)
     sr_no = models.CharField(max_length=255)
@@ -356,7 +243,7 @@ class NoDue(models.Model):
 
 
 class Profgrp(models.Model):
-    group_id = models.AutoField(primary_key=True)
+    group_id = models.AutoField(blank=False, null=False, primary_key=True)
     group_name = models.CharField(max_length=255)
     empid = models.IntegerField()
     prof_name = models.CharField(max_length=255)
@@ -367,7 +254,7 @@ class Profgrp(models.Model):
 
 
 class Resources(models.Model):
-    fid = models.CharField(max_length=15, blank=True, null=True)
+    fid = models.CharField(max_length=15, blank=False, null=False, primary_key=True)
     request = models.CharField(max_length=25, blank=True, null=True)
     approved = models.CharField(max_length=25, blank=True, null=True)
     granted = models.CharField(max_length=25, blank=True, null=True)
@@ -390,7 +277,7 @@ class Stats(models.Model):
     rsvltd = models.IntegerField(blank=True, null=True)
     rsactvd = models.IntegerField(blank=True, null=True)
     rsdltd = models.IntegerField(blank=True, null=True)
-    monthyear = models.CharField(max_length=7, blank=True, null=True)
+    monthyear = models.CharField(max_length=7, blank=False, null=False, primary_key=True)
 
     class Meta:
         managed = False
@@ -416,7 +303,7 @@ class Student(models.Model):
     role = models.CharField(max_length=255)
     ext_lck_date = models.TextField()
     remarks = models.TextField()
-    fid = models.CharField(primary_key=True, max_length=15)
+    fid = models.CharField(primary_key=True, max_length=15, blank=False, null=False)
 
     class Meta:
         managed = False
@@ -437,7 +324,7 @@ class Student_290115(models.Model):
     facname = models.CharField(max_length=75, blank=True, null=True)
     phno = models.CharField(max_length=20, blank=True, null=True)
     email = models.CharField(max_length=75, blank=True, null=True)
-    fid = models.CharField(max_length=15, blank=True, null=True)
+    fid = models.CharField(max_length=15, blank=False, null=False, primary_key=True)
 
     class Meta:
         managed = False
@@ -458,7 +345,7 @@ class StudentBackup(models.Model):
     facname = models.CharField(max_length=75, blank=True, null=True)
     phno = models.CharField(max_length=20, blank=True, null=True)
     email = models.CharField(max_length=75, blank=True, null=True)
-    fid = models.CharField(max_length=15, blank=True, null=True)
+    fid = models.CharField(max_length=15, blank=False, null=False, primary_key=True)
 
     class Meta:
         managed = False
@@ -484,7 +371,7 @@ class StudentNoLogin(models.Model):
     role = models.CharField(max_length=255)
     ext_lck_date = models.TextField()
     remarks = models.TextField()
-    fid = models.CharField(max_length=15)
+    fid = models.CharField(max_length=15, blank=False, null=False, primary_key=True)
 
     class Meta:
         managed = False
@@ -492,7 +379,7 @@ class StudentNoLogin(models.Model):
 
 
 class User(models.Model):
-    username = models.CharField(max_length=255)
+    username = models.CharField(max_length=255, primary_key=True, null=False, blank=False)
     passd = models.CharField(max_length=255)
     role = models.CharField(max_length=255)
 

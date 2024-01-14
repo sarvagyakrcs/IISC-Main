@@ -82,10 +82,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'iisc_backend',
-        'HOST': 'aws.connect.psdb.cloud',
+        'HOST': 'localhost',
         'PORT': '3306',
-        'USER': 'e771pz3c3agmg6cjlo0v',
-        'PASSWORD': 'pscale_pw_6IX7c9JnjT8VgauL03X0aWf0aZmJttV3Xs9ZRrpl0K3',
+        'USER': 'root',
+        'PASSWORD': 'sarvagyaKumar@india',
     }
 }
 
