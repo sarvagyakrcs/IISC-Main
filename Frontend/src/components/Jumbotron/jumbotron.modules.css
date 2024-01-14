@@ -1,0 +1,59 @@
+.jumbotron {
+    background: linear-gradient(45deg, #4CAF50, #2196F3);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    height: fit-content; /* Adjust height as needed */
+}
+
+.jumbotron h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.user-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+    color: black;
+}
+
+.user-details p {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 0;
+}
+
+.proofViewer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+
+.proofButton {
+    margin-bottom: 10px;
+}
+
+.proofImage {
+    max-width: 50vw;
+    height: auto;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out; /* Adjust the duration and easing as needed */
+}
+
+.proofImage.active {
+    opacity: 1;
+}
+
+.loader{
+    margin-left: 190px;
+    position: relative;
+    top: -25px;
+}

@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.product-description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    /* background: linear-gradient(to right, #ff7e5f, #feb47b); */
+}
+
+.product-info {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-logo {
+    width: 25%;
+}
+
+.product-logo img {
+    width: 90%;
+    margin-top: 10px;
+}
+
+.logo-details {
+    width: 30%;
+}
+
+.logo-text {
+    font-family: 'Roboto', sans-serif;
+}
+
+.line-vertical {
+    height: 150px;
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+}
+
+.line {
+    height: 100%;
+    border-left: 2px solid #333;
+}
+
+.logo-details {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.logo-text h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: -8px;
+}
+
+.logo-text h2,
+.logo-text h3 {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: -8px;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Add your styles for SignInButton and SignOutButton here */
+
+/* Update LoginPage.modules.css */
+
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+.product-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    /* Add space below the product title */
+}
+
+.product-description {
+    font-size: 16px;
+    margin-bottom: 20px;
+    /* Add more space below the product description */
+}
+
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    background-color: #4caf50;
+    color: #fff;
+    border: 2px solid #4caf50;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 300px;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    margin: 2px;
+}
+
+button:hover {
+    background-color: #fff;
+    color: #4caf50;
+}
+
+.loginButton{
+    background-color: #555;
+    border: 2px solid rgba(89, 86, 92, 0.926)
+}
+
+@media screen and (max-width: 768px) {
+    .product-info {
+        flex-direction: column;
+    }
+
+    .logo-details,
+    .line-vertical {
+        width: 100%;
+    }
+
+    .line-vertical {
+        height: 2px;
+        margin: 20px 0;
+    }
+
+    .product-logo {
+        width: 100%;
+        text-align: center;
+    }
+
+    .content {
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+.dropdownOption {
+    cursor: pointer;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    transition: background-color 0.3s;
+
+    /* Optional: Style the hover effect */
+    &:hover {
+        background-color: #f0f0f0;
+    }
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Add more styles as needed */

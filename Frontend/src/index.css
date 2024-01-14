@@ -1,0 +1,26 @@
+/* Reset some default styles to ensure consistency across browsers */
+html,
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply a box-sizing border-box model to all elements */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Style links */
+a {
+    text-decoration: none;
+}
+
+/* Add any additional styles for specific elements or components as needed */
