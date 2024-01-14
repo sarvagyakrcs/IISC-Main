@@ -1,112 +1,106 @@
-.login-page {
+.admin.login-page {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: #f0f0f0; /* Set your desired background color */
 }
 
-body{
-    /* background: linear-gradient(to right, #ff7e5f, #feb47b); */
-}
-
-.signin {
+.admin.signin {
     display: flex;
-    background-color: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff; /* Set your desired background color */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow for a subtle effect */
 }
 
-.logo {
+.admin.logo {
     padding: 20px;
-    background-color: white;
-    color: #fff;
     text-align: center;
 }
 
-.logo img {
-    max-width: 100px;
-    max-height: 100px;
+.admin.logo img {
+    max-width: 100px; /* Set the maximum width for your logo */
 }
 
-.logo-text {
+.admin.logo-text {
     margin-top: 10px;
 }
 
-.lineVertical {
-    border-left: 2px solid #007bff;
+.admin.lineVertical {
+    border-right: 2px solid #ccc; /* Set the color for the vertical line */
 }
 
-.line {
+.admin.line {
     height: 100%;
     width: 2px;
-    background-color: #007bff;
+    background-color: #ccc; /* Set the color for the line */
 }
 
-.content {
-    flex: 1;
+.admin.content {
     padding: 20px;
-    width: 30vw;
 }
 
-h2 {
-    color: #333;
+.admin h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
 }
 
-.form {
-    max-width: 300px;
+.admin.form {
+    max-width: 300px; /* Set the maximum width for your form */
     margin: 0 auto;
 }
 
-.inputBox {
-    position: relative;
-    margin-bottom: 0px;
+.admin inputBox {
+    margin-bottom: 20px;
 }
 
-.inputBox input{
-    width: 300px;
-}
-
-input {
+.admin input {
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 5px;
 }
 
-
-i {
-    position: absolute;
-    top: 50%;
-    left: 10px;
-    transform: translateY(-50%);
-    color: #888;
-}
-
-button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
+.admin i {
+    pointer-events: none;
     padding: 10px;
-    cursor: pointer;
+    transition: 0.3s;
 }
 
-button:hover {
-    background-color: #0056b3;
+.admin input:focus + i {
+    transform: translateY(-25px);
+    font-size: 12px;
+    color: #007bff; /* Set the color for the focus state */
 }
 
-.links {
+.admin links {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 20px;
 }
 
-.links a {
-    text-decoration: none;
-    color: #007bff;
+.admin links button {
+    background-color: #f0f0f0; /* Set the background color for the button */
+    border: none;
     cursor: pointer;
 }
 
-.links a:hover {
-    text-decoration: underline;
+.admin links a {
+    text-decoration: none;
+    color: #007bff; /* Set the color for the link */
+}
+
+.admin input[type="submit"] {
+    background-color: #007bff; /* Set the background color for the submit button */
+    color: #fff; /* Set the text color for the submit button */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.admin input[type="submit"]:hover {
+    background-color: #0056b3; /* Set the background color for the submit button on hover */
+}
+
+.adminLogout button{
+    background-color: tomato;
+    color: black;
 }

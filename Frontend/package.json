@@ -12,6 +12,7 @@
   "dependencies": {
     "@azure/msal-browser": "^3.6.0",
     "@azure/msal-react": "^2.0.8",
+    "bcryptjs": "^2.4.3",
     "firebase": "^10.7.1",
     "msal": "^1.4.18",
     "react": "^18.2.0",

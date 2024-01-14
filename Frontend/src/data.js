@@ -36,7 +36,7 @@ const menuOptions = {
 };
 
 const getMenuOptions = (accountType) => {
-    if(accountType === 'admin') {
+    if(accountType === 'Admin') {
         return {
             student: {
                 icon: studentIcon,

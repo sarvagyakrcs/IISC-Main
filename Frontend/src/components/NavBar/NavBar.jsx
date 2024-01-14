@@ -2,19 +2,33 @@ import React from 'react'
 import './navbar.modules.css'
 import logo from './images/iiscLogo.png';
 import NavMenu from '../NavMenu/navMenu';
-import { menuOptions } from '../../data';
+import { getMenuOptions } from '../../data';
 import { SignOutButton } from '../Login/SignOutButton';
 import ExtUserJumboTron from '../Jumbotron/JumbotronExtUser';
+import AdminLogout from '../../pages/home/AdminLogin/adminLogout';
 
 const NavBar = (props) => {
 
-    const userDetails = localStorage.getItem("user")
-    const userDetailsJson = JSON.parse(userDetails);
-    const username = userDetailsJson.userDetails.username;
-    const name = userDetailsJson['userDetails']['name'];
+    const accountType = localStorage.getItem('accountType');
+    const menuOptions = getMenuOptions(accountType);
+    let username = 'N.A';
+    let name = 'N.A';
+
+    if (accountType === 'Admin') {
+        const userDetails = localStorage.getItem("user")
+        console.log(userDetails);
+        username = userDetails.username;
+    }
+    else {
+        const userDetails = localStorage.getItem("user") 
+        console.log(userDetails);
+        const userDetailsJson = JSON.parse(userDetails);
+        username = userDetailsJson.userDetails.username;
+        name = userDetailsJson['userDetails']['name'];
+    }
 
     const mainBar = (
-        <div className="navBar navBarComplete"> 
+        <div className="navBar navBarComplete">
             <nav className="nav-Bar">
                 <div className="nav-logo">
                     <img className="logo-image" src={logo} alt="" />
@@ -38,11 +52,12 @@ const NavBar = (props) => {
                     <pre>Welcome, </pre>
                 </h3>
                 <pre style={{ color: 'navy' }}>
-                    {name}
+                    {name == 'N.A' ? 'Admin' : name}
                 </pre>
                 <pre style={{ color: 'white' }}> | </pre>
                 <pre style={{ color: 'navy' }}>{username}</pre>
-                <SignOutButton />
+                {/* <SignOutButton /> */}
+                {accountType === 'Admin' ? <AdminLogout /> : <SignOutButton />}
             </nav>
             {/* <ExtUserJumboTron /> */}
         </div>

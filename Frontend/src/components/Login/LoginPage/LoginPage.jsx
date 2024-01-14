@@ -23,6 +23,7 @@ const LoginPage = (props) => {
     };
 
     const handleAdminLogin = () => {
+        handleAccountTypeSelect('Admin')
         navigate('/admin');
     }
 

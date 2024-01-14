@@ -249,3 +249,17 @@ class ExtUsersSearchByEmail(APIView):
             return Response(serializer.data)
         except ExtUsers.DoesNotExist:
             return Response({'error': 'User not found'}, status=status.HTTP_404_NOT_FOUND)
+        
+
+class FacultySearchByEmail(APIView):
+    def get(self, request, *args, **kwargs):
+        email = request.query_params.get('email', None)
+        if not email:
+            return Response({'error': 'Email parameter is required'}, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            faculty = Faculty.objects.get(facemailid=email)
+            serializer = FacultySerializer(faculty)
+            return Response(serializer.data)
+        except Faculty.DoesNotExist:
+            return Response({'error': 'Faculty not found'}, status=status.HTTP_404_NOT_FOUND)
