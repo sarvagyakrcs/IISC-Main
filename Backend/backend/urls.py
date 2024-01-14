@@ -11,7 +11,7 @@ from .views import (
     ProfgrpDetailView, ResourceListCreateView, ResourceDetailView, StatsListCreateView, StatsDetailView,
     StudentListCreateView, StudentDetailView, Student_290115ListCreateView, Student_290115DetailView,
     StudentBackupListCreateView, StudentBackupDetailView, StudentNoLoginListCreateView, StudentNoLoginDetailView,
-    UserListCreateView, UserDetailView,
+    UserListCreateView, UserDetailView, ExtUsersSearchByEmail
 )
 
 urlpatterns = [
@@ -86,6 +86,10 @@ urlpatterns = [
 
     path('user/', UserListCreateView.as_view(), name='user-list-create'),
     path('user/<int:pk>/', UserDetailView.as_view(), name='user-detail'),
+
+    # custom-views
+    path('ext-users-search-by-email/', ExtUsersSearchByEmail.as_view(), name='ext_users_search_by_email'),
+
 ]
 
 

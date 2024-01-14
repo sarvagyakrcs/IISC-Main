@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '7cff5fb4f0a35e5ca1dae1b4eb26a258'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', 'sarvagya.pythonanywhere.com', 'https://iisc-backend.onrender.com']
 
@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['localhost', 'sarvagya.pythonanywhere.com', 'https://iisc-backe
 INSTALLED_APPS = [
     'backend',
     'drf_yasg',
+    'corsheaders',
     'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',

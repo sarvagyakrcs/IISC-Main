@@ -48,7 +48,6 @@ const LoginPage = (props) => {
             {isDropdownOpen && (
                 <div className="dropdown-menu">
                     {/* Dropdown options */}
-                    <div onClick={() => handleAccountTypeSelect('Admin')} className='dropdownOption'>Admin</div>
                     <div onClick={() => handleAccountTypeSelect('Student')} className='dropdownOption'>Student</div>
                     <div onClick={() => handleAccountTypeSelect('Faculty')} className='dropdownOption'>Faculty</div>
                     <div onClick={() => handleAccountTypeSelect('External User')} className='dropdownOption'>External User</div>

@@ -10,6 +10,11 @@ from .serializers import ExtUsersBackupSerializer, FacultySerializer, HipQueueSe
 from .serializers import NewExtUsersSerializer, NisUserDataSerializer, NoDueRegSerializer, NoDueSerializer
 from .serializers import ProfgrpSerializer, ResourceSerializer, StatsSerializer, StudentSerializer, Student_290115Serializer
 from .serializers import StudentBackupSerializer, StudentNoLoginSerializer, UserSerializer
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
+from .models import ExtUsers
+from .serializers import ExtUsersSerializer
 
 # Clstrgrp views
 class ClstrgrpListCreateView(generics.ListCreateAPIView):
@@ -226,3 +231,21 @@ class UserListCreateView(generics.ListCreateAPIView):
 class UserDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+
+
+# Custom Views 
+#django-rest-framework
+
+class ExtUsersSearchByEmail(APIView):
+    def get(self, request, *args, **kwargs):
+        email = self.request.query_params.get('email', None)
+
+        if email is None:
+            return Response({'error': 'Email parameter is required'}, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            user = ExtUsers.objects.get(email=email)
+            serializer = ExtUsersSerializer(user)
+            return Response(serializer.data)
+        except ExtUsers.DoesNotExist:
+            return Response({'error': 'User not found'}, status=status.HTTP_404_NOT_FOUND)
