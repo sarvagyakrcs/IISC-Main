@@ -21,7 +21,6 @@ const NavBar = (props) => {
     }
     else {
         const userDetails = localStorage.getItem("user") 
-        console.log(userDetails);
         const userDetailsJson = JSON.parse(userDetails);
         username = userDetailsJson.userDetails.username;
         name = userDetailsJson['userDetails']['name'];

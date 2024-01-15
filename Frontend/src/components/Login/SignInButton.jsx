@@ -32,25 +32,54 @@ export const SignInButton = (props) => {
 
     const userAccountType = localStorage.getItem('accountType');
 
+    // const handleTokenResponse = async (loginResponse) => {
+    //     try {
+    //         const response = await instance.acquireTokenSilent({
+    //             ...loginRequest,
+    //             account: loginResponse.account,
+    //         });
+    //         localStorage.setItem("user", JSON.stringify({
+    //             userDetails: loginResponse.account
+    //         }));
+    //         if (userAccountType === 'External User') {
+    //             getExtUserFromEmail(response.account.username);
+    //         }
+    //         else if (userAccountType === 'Faculty') {
+    //             getFacultyFromEmail(response.account.username);
+    //         }
+    //     } catch (e) {
+    //         console.log(e);
+    //     }
+    // };
+
     const handleTokenResponse = async (loginResponse) => {
         try {
-            const response = await instance.acquireTokenSilent({
+            // Acquire access token
+            const tokenResponse = await instance.acquireTokenSilent({
                 ...loginRequest,
                 account: loginResponse.account,
             });
+    
+            // Access token is available in the tokenResponse object
+            const accessToken = tokenResponse.accessToken;
+    
+            // Store user details and access token in local storage
             localStorage.setItem("user", JSON.stringify({
-                userDetails: loginResponse.account
+                userDetails: loginResponse.account,
+                accessToken: accessToken,
             }));
+    
+            // Use the access token as needed (e.g., make API requests)
             if (userAccountType === 'External User') {
-                getExtUserFromEmail(response.account.username);
-            }
-            else if (userAccountType === 'Faculty') {
-                getFacultyFromEmail(response.account.username);
+                getExtUserFromEmail(loginResponse.account.username);
+            } else if (userAccountType === 'Faculty') {
+                getFacultyFromEmail(loginResponse.account.username);
             }
         } catch (e) {
-            console.log(e);
+            console.error('Error handling token response:', e);
         }
     };
+    
 
 
     return (

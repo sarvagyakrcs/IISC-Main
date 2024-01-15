@@ -117,6 +117,7 @@ const instituteDetails = {
     "location-english": "Bangalore, India",
     "name-hindi": "भारतीय विज्ञान संस्थान",
     "location-hindi": "बैंगलोर, भारत",
+    "abbr" : "IISC, Bangalore"
 };
 
 const loggedInUser = {

@@ -16,7 +16,7 @@ const JumbotronAdmin = () => {
     const JumbotronContent = (
         <div className="jumbotron">
             <div className="jumbotron-title">
-                <h1>User Dashboard</h1>
+                <h1>Admin's  Dashboard</h1>
             </div>
             <div className="user-details">
                 {Object.keys(refs).map((key) => (
@@ -24,6 +24,9 @@ const JumbotronAdmin = () => {
                         <b>{key}</b>: {refs[key].current}
                     </p>
                 ))}
+            </div>
+            <div className="user-details">
+                <button>Open Menu</button>
             </div>
         </div>
     );
