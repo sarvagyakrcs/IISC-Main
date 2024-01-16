@@ -1,0 +1,29 @@
+.ext-search-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.ext-search-form label {
+    margin-bottom: 10px;
+}
+
+.ext-search-form input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+.ext-search-form button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.ext-search-form button:hover {
+    background-color: #45a049;
+}

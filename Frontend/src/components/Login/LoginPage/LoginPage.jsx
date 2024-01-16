@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, redirect, useNavigate } from 'react-router-dom';
 import { useIsAuthenticated } from '@azure/msal-react';
 import './LoginPage.modules.css';
 import logo from '../../NavBar/images/iiscLogo.png'
 import { SignInButton } from '../SignInButton';
 import { SignOutButton } from '../SignOutButton';
+import SignUpPageMain from '../../../pages/SignUp/mainSignUpPage';
 
 const LoginPage = (props) => {
     const navigate = useNavigate();
@@ -24,13 +25,14 @@ const LoginPage = (props) => {
 
     const handleAdminLogin = () => {
         handleAccountTypeSelect('Admin')
-        navigate('/admin');
+        navigate('/adminLogin');
     }
 
     const signInButton = (
         <div className="signInButtonContainer">
             <div className="content">
                 {isAuthenticated ? <SignOutButton /> : <SignInButton userAccountType={accountType} />}
+                <button onClick={() => navigate('/signUp')}>Sign Up</button>
                 <button type="button" onClick={() => setAccountType('')}>
                     Change Account Type
                 </button>
@@ -87,6 +89,7 @@ const LoginPage = (props) => {
                         {accountType === '' ? <button onClick={handleAdminLogin}>Admin Login</button> : ""}
                     </div>
                 </div>
+                {/* <SignUpPageMain/> */}
             </section>
         </>
     );

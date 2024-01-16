@@ -1,0 +1,81 @@
+.sidebar {
+    width: 30%;
+    background-color: #eee;
+    padding: 10px;
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar div {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar div:hover {
+    background-color: lightblue;
+}
+
+.sidebar hr {
+    margin: 10px 0;
+}
+
+.sidebar label {
+    display: block;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 3px;
+    margin-bottom: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar label:hover {
+    background-color: lightblue;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}
+
+.content h1 {
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+/* ExtUserAcAdmin.css */
+.quadrant {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.error-box {
+    color: red;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+}
+
+th,
+td {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.view-netgroup-users {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+}

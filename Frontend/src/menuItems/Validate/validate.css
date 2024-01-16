@@ -1,0 +1,73 @@
+.faculty-form-container {
+    max-width: 700px;
+    margin: auto;
+}
+
+.faculty-form {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #3498db;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.faculty-form label {
+    margin-bottom: 10px;
+}
+
+.faculty-form input,
+.faculty-form select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.faculty-form button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.faculty-form button:hover {
+    background-color: #2980b9;
+}
+
+.table-container {
+    margin-top: 20px;
+}
+
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-container table, .table-container th, .table-container td {
+    border: 1px solid #ccc;
+}
+
+.table-container th, .table-container td {
+    padding: 8px;
+    text-align: left;
+}
+
+.table-container th {
+    background-color: #3498db;
+    color: #fff;
+}
+
+.active-option {
+    color: green;
+}
+
+.not-active-option {
+    color: red;
+}

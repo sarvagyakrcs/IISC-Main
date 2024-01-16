@@ -4,6 +4,8 @@ import resourcesIcon from './components/NavMenu/images/resources-icon.png';
 import validateIcon from './components/NavMenu/images/validate-icon.png';
 import extUserAcAdminIcon from './components/NavMenu/images/admin-icon.png';
 import adminIcon from './components/NavMenu/images/admin-icon.png';
+// import Students from './menuItems/Students/Students';
+// import Staff from './menuItems/Staff/Staff';
 
 
 const baseURL = 'http://localhost:8000/';
@@ -40,11 +42,13 @@ const getMenuOptions = (accountType) => {
         return {
             student: {
                 icon: studentIcon,
-                menuOption: 'Students'
+                menuOption: 'Students',
+                // component : <Students />
             },
             staff: {
                 icon: staffIcon,
-                menuOption: 'Staff'
+                menuOption: 'Staff',
+                // component : <Staff />
             },
             resources: {
                 icon: resourcesIcon,

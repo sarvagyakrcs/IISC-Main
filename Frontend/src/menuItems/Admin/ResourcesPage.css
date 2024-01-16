@@ -1,0 +1,45 @@
+/* ResourcesPage CSS */
+
+.resources-page {
+    max-width: 500px;
+    margin: auto;
+}
+
+.resources-form {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #3498db;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.resources-form label {
+    margin-bottom: 10px;
+}
+
+.resources-form input,
+.resources-form textarea,
+.resources-form select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.resources-form button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.resources-form button:hover {
+    background-color: #2980b9;
+}

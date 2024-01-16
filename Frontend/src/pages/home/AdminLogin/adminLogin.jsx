@@ -33,7 +33,7 @@ const AdminLogin = () => {
             // You can handle the error in your application, e.g., show a user-friendly message to the user.
         }
         if (localStorage.getItem('adminKey') === adminKey) {
-            navigate('/adminPage');
+            navigate('/home');
         } else {
             alert('Invalid credentials. Please try again.');
         }

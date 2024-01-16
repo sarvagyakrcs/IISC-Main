@@ -1,0 +1,141 @@
+/* .staff-form-container {
+    max-width: 700px;
+    margin: auto;
+}
+
+.staff-form {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #3498db;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.staff-form label {
+    margin-bottom: 10px;
+}
+
+.staff-form input,
+.staff-form select,
+.staff-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.staff-form button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.staff-form button:hover {
+    background-color: #2980b9;
+}
+
+.note {
+    color: #2264d7f1; 
+} */
+
+
+/* students.css */
+
+.center{
+    text-align: center;
+}
+
+.wider{
+    width: 205%;
+}
+
+.studentForm-staff-form-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.studentForm-staff-form-container h1 {
+    text-align: center;
+    color: #333;
+}
+
+.studentForm-staff-form-container h2 {
+    color: #555;
+}
+
+.studentForm-staff-form hr {
+    border: 1px solid #ddd;
+    margin: 15px 0;
+}
+
+.studentForm-note {
+    color: #777;
+}
+
+.studentForm-staff-form label {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.studentForm-name-inputs input {
+    width: 48%;
+    margin-right: 2%;
+}
+
+.studentForm-department,
+.studentForm-faculty-guide-department {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.studentForm-faculty-guide-name,
+.studentForm-email-id,
+.studentForm-mobile-no,
+.studentForm-degree,
+.studentForm-nature-of-registration,
+.studentForm-enrollment-date,
+.studentForm-purpose-description {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+.studentForm-faculty-guide-name:focus,
+.studentForm-email-id:focus,
+.studentForm-mobile-no:focus,
+.studentForm-degree:focus,
+.studentForm-nature-of-registration:focus,
+.studentForm-enrollment-date:focus,
+.studentForm-purpose-description:focus {
+    border-color: #4CAF50;
+}
+
+.studentForm-submit-button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.studentForm-submit-button:hover {
+    background-color: #45a049;
+}
