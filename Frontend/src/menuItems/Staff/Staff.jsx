@@ -8,7 +8,7 @@ const Staff = () => {
             <br></br>
             <h2>APPLICATION FOR NEW ACCOUNT</h2>
             <hr />
-            <p className="note">For use by IISc Students only.</p>
+            <p className="note">For use by IISc Staff only.</p>
             <p className="note">(Temporary staff also.)</p>
             <p className="note">Please do not fill this form if you already have a computational account. If you need access to the basic HPC systems, such as Delta, kindly click on RESOURCES and proceed.</p>
             <hr />

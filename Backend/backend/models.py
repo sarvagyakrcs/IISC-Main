@@ -298,7 +298,7 @@ class Student(models.Model):
     facid = models.IntegerField()
     facname = models.CharField(max_length=75, blank=True, null=True)
     phno = models.CharField(max_length=20, blank=True, null=True)
-    email = models.CharField(max_length=75, blank=True, null=True)
+    email = models.CharField(max_length=75, blank=False, null=False)
     email2 = models.CharField(max_length=75)
     role = models.CharField(max_length=255)
     ext_lck_date = models.TextField()

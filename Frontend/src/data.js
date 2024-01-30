@@ -137,6 +137,8 @@ const loggedInUser = {
 const client_id = 'd501471f-6fe4-448d-9e3f-ef3e4dc206b1' //aka application id
 const tenant_id = 'df7206db-cabc-4b49-b065-e787466975f2' //aka directory id
 
+const toBeDecided = '101111';
+
 
 export {
     menuOptions,
@@ -146,5 +148,6 @@ export {
     tenant_id,
     baseURL,
     getMenuOptions,
-    adminKey
+    adminKey,
+    toBeDecided
 };
