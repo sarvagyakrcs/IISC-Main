@@ -11,7 +11,7 @@ from .views import (
     ProfgrpDetailView, ResourceListCreateView, ResourceDetailView, StatsListCreateView, StatsDetailView,
     StudentListCreateView, StudentDetailView, Student_290115ListCreateView, Student_290115DetailView,
     StudentBackupListCreateView, StudentBackupDetailView, StudentNoLoginListCreateView, StudentNoLoginDetailView,
-    UserListCreateView, UserDetailView, ExtUsersSearchByEmail, FacultySearchByEmail
+    UserListCreateView, UserDetailView, ExtUsersSearchByEmail, FacultySearchByEmail, EmpIdExistsOrNot
 )
 
 urlpatterns = [
@@ -90,7 +90,7 @@ urlpatterns = [
     # custom-views
     path('ext-users-search-by-email/', ExtUsersSearchByEmail.as_view(), name='ext_users_search_by_email'),
     path('faculty-search-by-email/', FacultySearchByEmail.as_view(), name='faculty_search_by_email'),
-
+    path('faculty-search-by-empid/', EmpIdExistsOrNot.as_view(), name='faculty_search_by_empid'),
 
 ]
 

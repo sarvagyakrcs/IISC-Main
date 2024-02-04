@@ -263,3 +263,16 @@ class FacultySearchByEmail(APIView):
             return Response(serializer.data)
         except Faculty.DoesNotExist:
             return Response({'error': 'Faculty not found'}, status=status.HTTP_404_NOT_FOUND)
+
+class EmpIdExistsOrNot(APIView):
+    def get(self, request, *args, **kwargs):
+        empid = request.query_params.get('empid', None)
+        if not empid:
+            return Response({'error': 'empid parameter is required'}, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            faculty = Faculty.objects.get(empid=empid)  # Assuming facmailid is the correct field name
+            serializer = FacultySerializer(faculty)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        except Faculty.DoesNotExist:
+            return Response({'error': 'Faculty not found with empid: {}'.format(empid)}, status=status.HTTP_404_NOT_FOUND)
